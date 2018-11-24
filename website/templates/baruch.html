@@ -1,3 +1,4 @@
+{% load cms_tags menu_tags sekizai_tags %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,20 +6,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>BARUCH CUISINE .:: hot & tasty</title>
+		<title>{% block title %}BARUCH CUISINE .:: hot & tasty{% endblock title %}</title>
 		<!-- Favicons-->
-		<link rel="shortcut icon" href="assets/images/favicon.png">
-		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+		<link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
+		<link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
+		<link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/images/apple-touch-icon-72x72.png' %}">
+		<link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/images/apple-touch-icon-114x114.png' %}">
 		<!-- Web Fonts-->
 		<link href="https://fonts.googleapis.com/css?family=PT+Serif%7cSignika:300,400,600,700" rel="stylesheet">
 		<!-- Bootstrap core CSS-->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Plugins and Icon Fonts-->
-		<link href="assets/css/plugins.min.css" rel="stylesheet">
+		<link href="{% static 'assets/css/plugins.min.css' %}" rel="stylesheet">
 		<!-- Template core CSS-->
-		<link href="assets/css/template.css" rel="stylesheet">
+		<link href="{% static 'assets/css/template.css' %}" rel="stylesheet">
 	</head>
 	<body>
 
@@ -37,7 +38,8 @@
 			<div class="navigation navigation-center">
 				<div class="container-fluid">
 					<!-- Brand-->
-					<div class="inner-header"><a class="inner-brand" href="index.html"><img class="brand-dark" src="assets/images/logo.png" width="74px" alt=""><img class="brand-light" src="assets/images/logo-light.png" width="74px" alt=""></a></div>
+					<div class="inner-header">
+         <a class="inner-brand" href="index.html"><img class="brand-dark" src="{% static 'assets/images/logo.png' %}" width="74px' %}" alt=""><img class="brand-light" src="{% static 'assets/images/logo-light.png' %}" width="74px' %}" alt=""></a></div>
 					<!-- Navigation-->
 					<div class="inner-navigation collapse">
 						<div class="inner-nav onepage-nav">
@@ -65,7 +67,7 @@
 			<!-- Hero-->
 			<section class="module-cover-slides fullscreen" id="home" data-hero-slides-options="{&quot;animation&quot;: &quot;fade&quot;}">
 				<ul class="slides-container">
-					<li class="parallax" data-overlay="0.5"><img src="assets/images/module-6.jpg" alt="">
+					<li class="parallax" data-overlay="0.5"><img src="{% static 'assets/images/module-6.jpg' %}' %}" alt="">
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12 m-auto">
@@ -79,7 +81,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="parallax" data-overlay="0.3"><img src="assets/images/module-2.jpg" alt="">
+					<li class="parallax" data-overlay="0.3"><img src="{% static 'assets/images/module-2.jpg' %}" alt="">
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12 m-auto">
@@ -93,7 +95,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="parallax" data-overlay="0.4"><img src="assets/images/module-8.jpg" alt="">
+					<li class="parallax" data-overlay="0.4"><img src="{% static 'assets/images/module-8.jpg' %}" alt="">
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12 m-auto">
@@ -108,7 +110,7 @@
 						</div>
 					</li>
 					
-					<li class="parallax" data-overlay="0.4"><img src="assets/images/module-3.jpg" alt="">
+					<li class="parallax" data-overlay="0.4"><img src="{% static 'assets/images/module-3.jpg' %}" alt="">
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12 m-auto">
@@ -147,10 +149,10 @@
 					</div>
 					<div class="row">
 						<div class="col-md-6">
-							<p><a class="photo" href="assets/images/main/1.jpg"><img src="assets/images/main/1.jpg" alt=""></a></p>
+							<p><a class="photo" href="assets/images/main/1.jpg"><img src="{% static 'assets/images/main/1.jpg' %}" alt=""></a></p>
 						</div>
 						<div class="col-md-6">
-							<p><a class="photo" href="assets/images/main/3.jpg"><img src="assets/images/main/3.jpg" alt=""></a></p>
+							<p><a class="photo" href="assets/images/main/3.jpg"><img src="{% static 'assets/images/main/3.jpg' %}" alt=""></a></p>
 						</div>
 					</div>
 					<div class="row">
@@ -194,7 +196,7 @@
 						<div class="col-md-12">
 							<div class="owl-carousel menu-carousel" data-carousel-options="{&quot;nav&quot;: false}">
 								<div class="menu-classic-item">
-									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/1.jpg"></a><img src="assets/images/menu/1.jpg" alt="">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/1.jpg"></a><img src="{% static 'assets/images/menu/1.jpg' %}" alt="">
 									</div>
 									<div class="menu-classic-item-inner">
 										<h6>Egusi</h6>
@@ -202,7 +204,7 @@
 									</div>
 								</div>
 								<div class="menu-classic-item">
-									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/2.jpg"></a><img src="assets/images/menu/2.jpg" alt="">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/2.jpg"></a><img src="{% static 'assets/images/menu/2.jpg' %}" alt="">
 									</div>
 									<div class="menu-classic-item-inner">
 										<h6>Okro</h6>
@@ -210,7 +212,7 @@
 									</div>
 								</div>
 								<div class="menu-classic-item">
-									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/3.jpg"></a><img src="assets/images/menu/3.jpg" alt="">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/3.jpg"></a><img src="{% static 'assets/images/menu/3.jpg' %}" alt="">
 									</div>
 									<div class="menu-classic-item-inner">
 										<h6>Ogbono</h6>
@@ -218,7 +220,7 @@
 									</div>
 								</div>
 								<div class="menu-classic-item">
-									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/4.jpg"></a><img src="assets/images/menu/4.jpg" alt="">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/4.jpg"></a><img src="{% static 'assets/images/menu/4.jpg' %}" alt="">
 									</div>
 									<div class="menu-classic-item-inner">
 										<h6>Beans with fried Plantain</h6>
@@ -226,7 +228,7 @@
 									</div>
 								</div>
 								<div class="menu-classic-item">
-									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/5.jpg"></a><img src="assets/images/menu/5.jpg" alt="">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/5.jpg"></a><img src="{% static 'assets/images/menu/5.jpg' %}" alt="">
 									</div>
 									<div class="menu-classic-item-inner">
 										<h6>Rice and fried Plantain</h6>
@@ -234,7 +236,7 @@
 									</div>
 								</div>
 								<div class="menu-classic-item">
-									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/6.jpg"></a><img src="assets/images/menu/6.jpg" alt="">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/6.jpg"></a><img src="{% static 'assets/images/menu/6.jpg' %}" alt="">
 									</div>
 									<div class="menu-classic-item-inner">
 										<h6>Spicy Spaghetti</h6>
@@ -268,28 +270,28 @@
 						<div class="col-md-6">
 							<div class="menu-simple">
 								<div class="menu-simple-item">
-									<div class="menu-simple-item-img"><img src="assets/images/widgets/1.jpg" alt=""></div>
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/1.jpg' %}" alt=""></div>
 									<div class="menu-simple-item-inner">
 										<h6><span>Small Chops with Fried Chicken</span><span class="pull-right"></span></h6>
 										<p>Puff-Puff, Spring Rolls, Chicken</p>
 									</div>
 								</div>
 								<div class="menu-simple-item">
-									<div class="menu-simple-item-img"><img src="assets/images/widgets/2.jpg" alt=""></div>
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/2.jpg' %}" alt=""></div>
 									<div class="menu-simple-item-inner">
 										<h6><span>Peppered Fish Barbeque</span><span class="pull-right"></span></h6>
 										<p>Fish, Onions, Pepper, Tomatoes</p>
 									</div>
 								</div>
 								<div class="menu-simple-item">
-									<div class="menu-simple-item-img"><img src="assets/images/widgets/3.jpg" alt=""></div>
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/3.jpg' %}" alt=""></div>
 									<div class="menu-simple-item-inner">
 										<h6><span>Fried Rice</span><span class="pull-right"></span></h6>
 										<p>Rice, Pepper, Carrots, Green Peas</p>
 									</div>
 								</div>
 								<div class="menu-simple-item">
-									<div class="menu-simple-item-img"><img src="assets/images/widgets/4.jpg" alt=""></div>
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/4.jpg' %}" alt=""></div>
 									<div class="menu-simple-item-inner">
 										<h6><span>Fufu with Efo Riro</span><span class="pull-right"></span></h6>
 										<p>Fufu, Waterleaf, Green, Ponmo, Beef</p>
@@ -300,28 +302,28 @@
 						<div class="col-md-6">
 							<div class="menu-simple">
 								<div class="menu-simple-item">
-									<div class="menu-simple-item-img"><img src="assets/images/widgets/5.jpg" alt=""></div>
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/5.jpg' %}" alt=""></div>
 									<div class="menu-simple-item-inner">
 										<h6><span>Amala with Ewedu soup</span><span class="pull-right"></span></h6>
 										<p>Amala, Ewedu, Ponmo, Beef, Chicken</p>
 									</div>
 								</div>
 								<div class="menu-simple-item">
-									<div class="menu-simple-item-img"><img src="assets/images/widgets/6.jpg" alt=""></div>
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/6.jpg' %}" alt=""></div>
 									<div class="menu-simple-item-inner">
 										<h6><span>Peppered Beef with Small Chops</span><span class="pull-right"></span></h6>
 										<p>Beef, Puff-Puff, Samosa</p>
 									</div>
 								</div>
 								<div class="menu-simple-item">
-									<div class="menu-simple-item-img"><img src="assets/images/widgets/7.jpg" alt=""></div>
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/7.jpg' %}" alt=""></div>
 									<div class="menu-simple-item-inner">
 										<h6><span>Semo with Afang</span><span class="pull-right"></span></h6>
 										<p>Semo, Vegetables, Ponmo, Okporoko</p>
 									</div>
 								</div>
 								<div class="menu-simple-item">
-									<div class="menu-simple-item-img"><img src="assets/images/widgets/8.jpg" alt=""></div>
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/8.jpg' %}" alt=""></div>
 									<div class="menu-simple-item-inner">
 										<h6><span>Fruit Drinks</span><span class="pull-right"></span></h6>
 										<p>Tigernut, Coconut</p>
@@ -470,7 +472,7 @@
 							<p class="lead">Professional chefs rely on a battery of tools and equipment. Chefs must be conscious of their kitchen tools when planning a menu and understand their use and production capacity.</p>
 							<div class="divider-border-left"></div>
 						</div>
-						<div class="col-md-6"><img src="assets/images/chef-1.png" alt=""></div>
+						<div class="col-md-6"><img src="{% static 'assets/images/chef-1.png' %}" alt=""></div>
 					</div>
 				</div>
 			</section>
@@ -555,7 +557,7 @@
 							<!-- Text widget-->
 							<aside class="widget widget_text">
 								<div class="textwidget">
-									<p><img src="assets/images/logo-light.png" width="74px" alt=""></p>
+									<p><img src="{% static 'assets/images/logo-light.png" width="74px' %}" alt=""></p>
 									<p>Easy, affordable, tasty and lovely meals. Experience the wonder of cooking.</p>
 									<ul class="icon-list">
 										<li><i class="ti-email"></i> admin@baruchcuisine.com</li>
@@ -595,12 +597,12 @@
 									<h5>Instagram</h5>
 								</div>
 								<ul>
-									<li><a href="#"><img src="assets/images/widgets/1.jpg" alt=""></a></li>
-									<li><a href="#"><img src="assets/images/widgets/2.jpg" alt=""></a></li>
-									<li><a href="#"><img src="assets/images/widgets/3.jpg" alt=""></a></li>
-									<li><a href="#"><img src="assets/images/widgets/4.jpg" alt=""></a></li>
-									<li><a href="#"><img src="assets/images/widgets/5.jpg" alt=""></a></li>
-									<li><a href="#"><img src="assets/images/widgets/6.jpg" alt=""></a></li>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/1.jpg' %}" alt=""></a></li>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/2.jpg' %}" alt=""></a></li>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/3.jpg' %}" alt=""></a></li>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/4.jpg' %}" alt=""></a></li>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/5.jpg' %}" alt=""></a></li>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/6.jpg' %}" alt=""></a></li>
 								</ul>
 							</aside>
 						</div>
@@ -636,7 +638,7 @@
 					<!-- Text widget-->
 					<aside class="widget widget_text">
 						<div class="textwidget">
-							<p><img src="assets/images/logo-light.png" width="74px" alt=""></p>
+							<p><img src="{% static 'assets/images/logo-light.png" width="74px' %}" alt=""></p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
 							<ul class="icon-list">
 								<li><i class="ti-email"></i> admin@baruchcuisine.com</li>
@@ -651,19 +653,19 @@
 							<h5>Instagram</h5>
 						</div>
 						<ul>
-							<li><a href="#"><img src="assets/images/widgets/1.jpg" alt=""></a></li>
-							<li><a href="#"><img src="assets/images/widgets/2.jpg" alt=""></a></li>
-							<li><a href="#"><img src="assets/images/widgets/3.jpg" alt=""></a></li>
-							<li><a href="#"><img src="assets/images/widgets/4.jpg" alt=""></a></li>
-							<li><a href="#"><img src="assets/images/widgets/5.jpg" alt=""></a></li>
-							<li><a href="#"><img src="assets/images/widgets/6.jpg" alt=""></a></li>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/1.jpg' %}" alt=""></a></li>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/2.jpg' %}" alt=""></a></li>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/3.jpg' %}" alt=""></a></li>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/4.jpg' %}" alt=""></a></li>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/5.jpg' %}" alt=""></a></li>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/6.jpg' %}" alt=""></a></li>
 						</ul>
 					</aside>
 					<!-- Text widget-->
 					<!--aside.widget.widget_text
 					.textwidget
 						.up-logo
-							p.text-center.m-b-50: img(src="assets/images/logo-light.png" width="100" alt="")
+							p.text-center.m-b-50: img(src="{% static 'assets/images/logo-light.png" width="100' %}" alt="")
 						.up-form
 							form(method="post")
 								.form-group
@@ -766,7 +768,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA0rANX07hh6ASNKdBr4mZH0KZSqbHYc3Q"></script>
-		<script src="assets/js/plugins.min.js"></script>
-		<script src="assets/js/custom.min.js"></script>
+		<script src="{% static 'assets/js/plugins.min.js"></script>
+		<script src="{% static 'assets/js/custom.min.js"></script>
 	</body>
 </html>

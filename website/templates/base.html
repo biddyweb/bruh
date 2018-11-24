@@ -1,41 +1,774 @@
 {% load cms_tags menu_tags sekizai_tags %}
-<!doctype html>
-<html>
-    <head>
-        <title>{% block title %}This is my new project home page{% endblock title %}</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <style type="text/css">
-            .nav {
-                padding-left: 0;
-            }
-            .nav li {
-                display: inline;
-                list-style-type: none;
-                padding-right: 20px;
-            }
-            .container {
-                width: 940px;
-                margin: 0 auto
-            }
-            .content {
-                float: left;
-                width: 80%;
-            }
-            .sidebar {
-                float: left;
-                width: 20%;
-            }
-        </style>
-        {% render_block "css" %}
-    </head>
-    <body>
-        {% cms_toolbar %}
-        <div class="container">
-            <ul class="nav">
-                {% show_menu 0 100 100 100 %}
-            </ul>
-            {% block content %}{% endblock content %}
-        </div>
-        {% render_block "js" %}
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>{% block title %}BARUCH CUISINE .:: hot & tasty{% endblock title %}</title>
+		<!-- Favicons-->
+		<link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
+		<link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
+		<link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/images/apple-touch-icon-72x72.png' %}">
+		<link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/images/apple-touch-icon-114x114.png' %}">
+		<!-- Web Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=PT+Serif%7cSignika:300,400,600,700" rel="stylesheet">
+		<!-- Bootstrap core CSS-->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Plugins and Icon Fonts-->
+		<link href="{% static 'assets/css/plugins.min.css' %}" rel="stylesheet">
+		<!-- Template core CSS-->
+		<link href="{% static 'assets/css/template.css' %}" rel="stylesheet">
+	</head>
+	<body>
+
+		<!-- Preloader-->
+		<div class="page-loader">
+			<div class="loader"></div>
+		</div>
+		<!-- Preloader end-->
+
+		<!-- Header-->
+		<header class="header header-transparent">
+			<!-- Top bar-->
+			
+			<!-- div class top bar taken out-->
+
+			<div class="navigation navigation-center">
+				<div class="container-fluid">
+					<!-- Brand-->
+					<div class="inner-header">
+         <a class="inner-brand" href="index.html"><img class="brand-dark" src="{% static 'assets/images/logo.png' %}" width="74px' %}" alt=""><img class="brand-light" src="{% static 'assets/images/logo-light.png' %}" width="74px' %}" alt=""></a></div>
+					<!-- Navigation-->
+					<div class="inner-navigation collapse">
+						<div class="inner-nav onepage-nav">
+							<ul>
+								<li><a href="#home"><span class="menu-item-span">Home</span></a></li>
+								<li><a href="#story"><span class="menu-item-span">Our Brands</span></a></li>
+								<li><a href="#gallery"><span class="menu-item-span">Gallery</span></a></li>
+								<li><a href="#services"><span class="menu-item-span">About Us</span></a></li>
+								<li><a href="#contact"><span class="menu-item-span">Contact Us</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Extra-nav - will be hidden on mobile-->
+
+					<!-- Mobile menu-->
+					<div class="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a></div>
+				</div>
+			</div>
+		</header>
+		<!-- Header end-->
+
+		<!-- Wrapper-->
+		<div class="wrapper">
+
+			<!-- Hero-->
+			<section class="module-cover-slides fullscreen" id="home" data-hero-slides-options="{&quot;animation&quot;: &quot;fade&quot;}">
+				<ul class="slides-container">
+					<li class="parallax" data-overlay="0.5"><img src="{% static 'assets/images/module-6.jpg' %}' %}" alt="">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 m-auto">
+									<div class="text-center">
+										<h6 class="text-uppercase">Wine and Dine</h6>
+										<h1 class="display-1">Baruch Cuisine</h1>
+										<p>Come experience a difference in cooking. <br/> Get served the usual meals in the unusual way.</p>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="parallax" data-overlay="0.3"><img src="{% static 'assets/images/module-2.jpg' %}" alt="">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 m-auto">
+									<div class="text-center">
+										<h6 class="text-uppercase">Chef Su</h6>
+										<h1 class="display-1">Special Offers</h1>
+										<p>Featuring all sorts of chops and mucnches, <br/> You're in for a wonderful treat.</p>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="parallax" data-overlay="0.4"><img src="{% static 'assets/images/module-8.jpg' %}" alt="">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 m-auto">
+									<div class="text-center">
+										<h6 class="text-uppercase">From the Chefs</h6>
+										<h1 class="display-1">Special Recipes</h1>
+										<p>Special Recipes for great meals.<br/> Enjoy great taste of the recipe wonders by our chefs.</p>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<li class="parallax" data-overlay="0.4"><img src="{% static 'assets/images/module-3.jpg' %}" alt="">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 m-auto">
+									<div class="text-center">
+										<h6 class="text-uppercase">Food Experts</h6>
+										<h1 class="display-1">Fruit Drinks Benefits</h1>
+										<p>Various studies have confirmed the potential health impact <br/>of the bioactives found in 100% fruit juice.</p>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+				<div class="slides-navigation"><a class="prev" href="#"><span class="ti-angle-left"></span></a><a class="next" href="#"><span class="ti-angle-right"></span></a></div>
+			</section>
+			<!-- Hero end-->
+
+			<!-- Our Story-->
+			<section class="module" id="story">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 m-auto text-center">
+							<p class="subtitle">Discover The</p>
+							<h1 class="display-1">Baruch</h1>
+							<p class="subtitle">Story</p>
+							<p class="lead">Baruch cuisine started as a result as a result of the need <br/> for tasty, quality and affordable meal.</p>
+							<div class="divider-border"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="space" data-mY="40px"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<p><a class="photo" href="assets/images/main/1.jpg"><img src="{% static 'assets/images/main/1.jpg' %}" alt=""></a></p>
+						</div>
+						<div class="col-md-6">
+							<p><a class="photo" href="assets/images/main/3.jpg"><img src="{% static 'assets/images/main/3.jpg' %}" alt=""></a></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="space" data-mY="40px"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 m-auto">
+							<div class="text-justify">
+								<p>On a daily basis, finding good food is hard and at the end when you see where to buy food, you find out it's tasteless and expensive and small at the same time. At baruch cuisine, meals are prepared based on customers' specifications, at the most affordable rates. Thus, every of your penny counts.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="space" data-mY="60px"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Our Story End-->
+
+			<!-- Special Offers-->
+			<section class="module bg-gray" id="special">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 m-auto text-center">
+							<p class="subtitle">Chef Su</p>
+							<h1 class="display-1">Special Offers</h1>
+							<p class="lead">See amazingly great meals <br/> at the most affordable rates. Thanks to our Chefs.</p>
+							<div class="divider-border"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="space" data-mY="60px"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="owl-carousel menu-carousel" data-carousel-options="{&quot;nav&quot;: false}">
+								<div class="menu-classic-item">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/1.jpg"></a><img src="{% static 'assets/images/menu/1.jpg' %}" alt="">
+									</div>
+									<div class="menu-classic-item-inner">
+										<h6>Egusi</h6>
+										<p>Soups, Nigeria</p>
+									</div>
+								</div>
+								<div class="menu-classic-item">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/2.jpg"></a><img src="{% static 'assets/images/menu/2.jpg' %}" alt="">
+									</div>
+									<div class="menu-classic-item-inner">
+										<h6>Okro</h6>
+										<p>South-East, South-West Nigeria</p>
+									</div>
+								</div>
+								<div class="menu-classic-item">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/3.jpg"></a><img src="{% static 'assets/images/menu/3.jpg' %}" alt="">
+									</div>
+									<div class="menu-classic-item-inner">
+										<h6>Ogbono</h6>
+										<p>South-East Nigeria</p>
+									</div>
+								</div>
+								<div class="menu-classic-item">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/4.jpg"></a><img src="{% static 'assets/images/menu/4.jpg' %}" alt="">
+									</div>
+									<div class="menu-classic-item-inner">
+										<h6>Beans with fried Plantain</h6>
+										<p>Foods, Nigeria</p>
+									</div>
+								</div>
+								<div class="menu-classic-item">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/5.jpg"></a><img src="{% static 'assets/images/menu/5.jpg' %}" alt="">
+									</div>
+									<div class="menu-classic-item-inner">
+										<h6>Rice and fried Plantain</h6>
+										<p>Nigeria</p>
+									</div>
+								</div>
+								<div class="menu-classic-item">
+									<div class="menu-classic-item-img"><a class="photo" href="assets/images/menu/6.jpg"></a><img src="{% static 'assets/images/menu/6.jpg' %}" alt="">
+									</div>
+									<div class="menu-classic-item-inner">
+										<h6>Spicy Spaghetti</h6>
+										<p>Nigeria</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Special Offers End-->
+
+			<!-- Popular Dishes-->
+			<section class="module" id="popular">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 m-auto text-center">
+							<p class="subtitle">Tasty and crunchy</p>
+							<h1 class="display-1">Popular Dishes</h1>
+							<p class="lead">See the most popular dishes from your region.<br/> Make a call to place your order and get them delivered in no time.</p>
+							<div class="divider-border"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="space" data-mY="60px"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="menu-simple">
+								<div class="menu-simple-item">
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/1.jpg' %}" alt=""></div>
+									<div class="menu-simple-item-inner">
+										<h6><span>Small Chops with Fried Chicken</span><span class="pull-right"></span></h6>
+										<p>Puff-Puff, Spring Rolls, Chicken</p>
+									</div>
+								</div>
+								<div class="menu-simple-item">
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/2.jpg' %}" alt=""></div>
+									<div class="menu-simple-item-inner">
+										<h6><span>Peppered Fish Barbeque</span><span class="pull-right"></span></h6>
+										<p>Fish, Onions, Pepper, Tomatoes</p>
+									</div>
+								</div>
+								<div class="menu-simple-item">
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/3.jpg' %}" alt=""></div>
+									<div class="menu-simple-item-inner">
+										<h6><span>Fried Rice</span><span class="pull-right"></span></h6>
+										<p>Rice, Pepper, Carrots, Green Peas</p>
+									</div>
+								</div>
+								<div class="menu-simple-item">
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/4.jpg' %}" alt=""></div>
+									<div class="menu-simple-item-inner">
+										<h6><span>Fufu with Efo Riro</span><span class="pull-right"></span></h6>
+										<p>Fufu, Waterleaf, Green, Ponmo, Beef</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="menu-simple">
+								<div class="menu-simple-item">
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/5.jpg' %}" alt=""></div>
+									<div class="menu-simple-item-inner">
+										<h6><span>Amala with Ewedu soup</span><span class="pull-right"></span></h6>
+										<p>Amala, Ewedu, Ponmo, Beef, Chicken</p>
+									</div>
+								</div>
+								<div class="menu-simple-item">
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/6.jpg' %}" alt=""></div>
+									<div class="menu-simple-item-inner">
+										<h6><span>Peppered Beef with Small Chops</span><span class="pull-right"></span></h6>
+										<p>Beef, Puff-Puff, Samosa</p>
+									</div>
+								</div>
+								<div class="menu-simple-item">
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/7.jpg' %}" alt=""></div>
+									<div class="menu-simple-item-inner">
+										<h6><span>Semo with Afang</span><span class="pull-right"></span></h6>
+										<p>Semo, Vegetables, Ponmo, Okporoko</p>
+									</div>
+								</div>
+								<div class="menu-simple-item">
+									<div class="menu-simple-item-img"><img src="{% static 'assets/images/widgets/8.jpg' %}" alt=""></div>
+									<div class="menu-simple-item-inner">
+										<h6><span>Fruit Drinks</span><span class="pull-right"></span></h6>
+										<p>Tigernut, Coconut</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Popular Dishes End-->
+
+			<!-- Gallery-->
+			<section class="module no-gutter p-0" id="gallery">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xl-4 col-lg-12 bg-gray">
+							<div class="gallery-shorcode-desc">
+								<div class="vertical-body">
+									<div class="vertical">
+										<div class="text-center">
+											<p class="subtitle">Photos</p>
+											<h1 class="display-1">Gallery</h1>
+											<p class="lead">Discover great and wonderful dishes <br> from your locality. You will be surprised at what you will find out.</p>
+											<div class="divider-border"></div>
+											<div class="space" data-mY="60px"></div><a class="btn btn-black" href="gallery.html">Discover Dishes</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-8 col-lg-12">
+							<div class="gallery gallery-shorcode">
+								<div class="gallery-item">
+									<div class="gallery-image" data-background="assets/images/portfolio/1.jpg"></div><a href="assets/images/portfolio/1.jpg" title="Small Chops"></a>
+								</div>
+								<div class="gallery-item">
+									<div class="gallery-image" data-background="assets/images/portfolio/5.jpg"></div><a href="assets/images/portfolio/5.jpg" title="Fried Plantain with baked Beans"></a>
+								</div>
+								<div class="gallery-item">
+									<div class="gallery-image" data-background="assets/images/portfolio/3.jpg"></div><a href="assets/images/portfolio/3.jpg" title="Title 3"></a>
+								</div>
+								<div class="gallery-item">
+									<div class="gallery-image" data-background="assets/images/portfolio/4.jpg"></div><a href="assets/images/portfolio/4.jpg" title="Boli with Fish and Sauce"></a>
+								</div>
+								<div class="gallery-item">
+									<div class="gallery-image" data-background="assets/images/portfolio/2.jpg"></div><a href="assets/images/portfolio/2.jpg" title="Abacha"></a>
+								</div>
+								<div class="gallery-item">
+									<div class="gallery-image" data-background="assets/images/portfolio/6.jpg"></div><a href="assets/images/portfolio/6.jpg" title="Yam with Egg and Sauce"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Gallery end-->
+
+			<!-- Services-->
+			<section class="module" id="services">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 m-auto text-center">
+							<p class="subtitle">For your comfort</p>
+							<h1 class="display-1">Stunning Things</h1>
+							<p class="lead">See how your users experience your website in realtime or view <br/> trends to see any changes in performance over time.</p>
+							<div class="divider-border"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="space" data-mY="60px"></div>
+						</div>
+					</div>
+					<div class="row appear-childer">
+						<div class="col-md-3">
+							<div class="icon-box text-center">
+								<div class="icon-box-icon"><span class="icon-clock"></span></div>
+								<div class="icon-box-title">
+									<h5>Opened 24/7</h5>
+								</div>
+								<div class="icon-box-content">
+									<p>Map where your photos were taken and discover local points of interest. Map where your photos.</p>
+								</div>
+								<div class="icon-box-link"><a href="#"></a></div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="icon-box text-center">
+								<div class="icon-box-icon"><span class="icon-streetsign"></span></div>
+								<div class="icon-box-title">
+									<h5>Free Parking</h5>
+								</div>
+								<div class="icon-box-content">
+									<p>Map where your photos were taken and discover local points of interest. Map where your photos.</p>
+								</div>
+								<div class="icon-box-link"><a href="#"></a></div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="icon-box text-center">
+								<div class="icon-box-icon"><span class="icon-compass"></span></div>
+								<div class="icon-box-title">
+									<h5>Central Location</h5>
+								</div>
+								<div class="icon-box-content">
+									<p>Map where your photos were taken and discover local points of interest. Map where your photos.</p>
+								</div>
+								<div class="icon-box-link"><a href="#"></a></div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="icon-box text-center">
+								<div class="icon-box-icon"><span class="icon-linegraph"></span></div>
+								<div class="icon-box-title">
+									<h5>High Quality</h5>
+								</div>
+								<div class="icon-box-content">
+									<p>Map where your photos were taken and discover local points of interest. Map where your photos.</p>
+								</div>
+								<div class="icon-box-link"><a href="#"></a></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="space" data-mY="60px"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 m-auto">
+							<p class="text-center">* See how your users experience your website in realtime or view trends to see any changes in performance over time.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Services End-->
+
+			<!-- Chef-->
+			<section class="module bg-gray p-b-0">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<p class="subtitle">Professional cook team</p>
+							<h1 class="display-1">In the Kitchen</h1>
+							<p class="lead">Professional chefs rely on a battery of tools and equipment. Chefs must be conscious of their kitchen tools when planning a menu and understand their use and production capacity.</p>
+							<div class="divider-border-left"></div>
+						</div>
+						<div class="col-md-6"><img src="{% static 'assets/images/chef-1.png' %}" alt=""></div>
+					</div>
+				</div>
+			</section>
+			<!-- Chef End-->
+
+			<!-- News-->
+			
+			<!-- News end-->
+			
+			<!-- Contact-->
+			<section class="module" id="contact">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 m-auto text-center">
+							<p class="subtitle">Contact Us</p>
+							<h1 class="display-1">We love to hear from you!</h1>
+							<div class="divider-border"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="space" data-mY="60px"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8 m-auto">
+							<form id="contact-form" method="post" novalidate>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="text" name="name" placeholder="Name" required="">
+											<p class="help-block text-danger"></p>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="email" name="email" placeholder="E-mail" required="">
+											<p class="help-block text-danger"></p>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input class="form-control" type="tel" name="phone" placeholder="Phone" required="">
+											<p class="help-block text-danger"></p>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<textarea class="form-control" name="message" placeholder="Message" rows="12" required=""></textarea>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<p></p>
+										<div class="text-center">
+											<input class="btn btn-black" type="submit" value="Get in touch">
+										</div>
+									</div>
+								</div>
+							</form>
+							<!-- Ajax response-->
+							<div class="ajax-response text-center" id="contact-response"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="space" data-mY="100px"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Contact end-->
+			
+			<svg class="footer-circle" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
+				<path d="M0 100 C40 0 60 0 100 100 Z"></path>
+			</svg>
+			
+			<!-- Footer-->
+			<footer class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<!-- Text widget-->
+							<aside class="widget widget_text">
+								<div class="textwidget">
+									<p><img src="{% static 'assets/images/logo-light.png" width="74px' %}" alt=""></p>
+									<p>Easy, affordable, tasty and lovely meals. Experience the wonder of cooking.</p>
+									<ul class="icon-list">
+										<li><i class="ti-email"></i> admin@baruchcuisine.com</li>
+										<li><i class="ti-headphone-alt"></i> 08028033058</li>
+										<li><i class="ti-location-pin"></i> Festival Town, Lagos</li>
+									</ul>
+								</div>
+							</aside>
+						</div>
+						<div class="col-md-3">
+							<!-- Recent entries widget-->
+							<aside class="widget widget_recent_entries">
+								<div class="widget-title">
+									<h5>Recent Posts</h5>
+								</div>
+								<ul>
+									<li><a href="#">Fried Plantain with Egg and Sauce</a> <span class="post-date">Oct 11, 2018</span></li>
+									<li><a href="#">Semo to go with Egusi soup and Beef</a> <span class="post-date">Oct 10, 2018</span></li>
+									<li><a href="#">Fried Chicken and Small Chops</a> <span class="post-date">Oct 9, 2018</span></li>
+									<li><a href="#">Drinks with numerous benefits</a> <span class="post-date">Oct 8, 2018</span></li>
+								</ul>
+							</aside>
+						</div>
+						<div class="col-md-3">
+							<!-- Twitter-->
+							<aside class="widget twitter-feed-widget">
+								<div class="widget-title">
+									<h5>Twitter Feed</h5>
+								</div>
+								<div class="twitter-feed" data-twitter="345170787868762112" data-number="2"></div>
+							</aside>
+						</div>
+						<div class="col-md-3">
+							<!-- Recent portfolio widget-->
+							<aside class="widget widget_recent_works">
+								<div class="widget-title">
+									<h5>Instagram</h5>
+								</div>
+								<ul>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/1.jpg' %}" alt=""></a></li>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/2.jpg' %}" alt=""></a></li>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/3.jpg' %}" alt=""></a></li>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/4.jpg' %}" alt=""></a></li>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/5.jpg' %}" alt=""></a></li>
+									<li><a href="#"><img src="{% static 'assets/images/widgets/6.jpg' %}" alt=""></a></li>
+								</ul>
+							</aside>
+						</div>
+					</div>
+				</div>
+				<div class="small-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="copyright">&copy; 2018 <a href="http://baruchcuisine.com"/>BARUCH CUISINE</a>, All Rights Reserved.</div>
+							</div>
+							<div class="col-md-6">
+								<ul class="social-links">
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- Footer end-->
+		</div>
+		<!-- Wrapper end-->
+
+		<!-- Off canvas-->
+		<div class="off-canvas-sidebar" data-background="assets/images/sidebar.jpg">
+			<div class="off-canvas-sidebar-wrapper">
+				<div class="off-canvas-header"><a class="close-offcanvas" href="#"><span class="arrows arrows-arrows-remove"></span></a></div>
+				<div class="off-canvas-content">
+					<!-- Text widget-->
+					<aside class="widget widget_text">
+						<div class="textwidget">
+							<p><img src="{% static 'assets/images/logo-light.png" width="74px' %}" alt=""></p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+							<ul class="icon-list">
+								<li><i class="ti-email"></i> admin@baruchcuisine.com</li>
+								<li><i class="ti-headphone-alt"></i> 08028033058</li>
+								<li><i class="ti-location-pin"></i> Festival Town, Lagos</li>
+							</ul>
+						</div>
+					</aside>
+					<!-- Recent portfolio widget-->
+					<aside class="widget widget_recent_works">
+						<div class="widget-title">
+							<h5>Instagram</h5>
+						</div>
+						<ul>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/1.jpg' %}" alt=""></a></li>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/2.jpg' %}" alt=""></a></li>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/3.jpg' %}" alt=""></a></li>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/4.jpg' %}" alt=""></a></li>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/5.jpg' %}" alt=""></a></li>
+							<li><a href="#"><img src="{% static 'assets/images/widgets/6.jpg' %}" alt=""></a></li>
+						</ul>
+					</aside>
+					<!-- Text widget-->
+					<!--aside.widget.widget_text
+					.textwidget
+						.up-logo
+							p.text-center.m-b-50: img(src="{% static 'assets/images/logo-light.png" width="100' %}" alt="")
+						.up-form
+							form(method="post")
+								.form-group
+									input.form-control.form-control-lg(type="email" placeholder="Email")
+								.form-group
+									input.form-control.form-control-lg(type="password" placeholder="Pasword")
+								.form-group
+									button(type="submit" class="btn btn-block btn-lg btn-round btn-brand") Log in
+						.up-help
+							p: a(href="#") Forgot your password?
+							p Don't have an account yet? <a href="#">Sign in</a>
+					
+					-->
+
+					<!-- Twitter widget-->
+					<aside class="widget twitter-feed-widget">
+						<div class="widget-title">
+							<h5>Twitter Feed</h5>
+						</div>
+						<div class="twitter-feed" data-twitter="345170787868762112" data-number="2"></div>
+					</aside>
+					<ul class="social-icons">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#"><i class="fa fa-vk"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Off canvas end-->
+
+		<!-- Reserve Popup-->
+		<div class="white-popup-block mfp-hide" id="test-form">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 p-0">
+						<div class="qwert" data-background="assets/images/module-2.jpg"></div>
+					</div>
+					<div class="col-md-8">
+						<div class="ddd"><a class="popup-modal-dismiss" href="#"><i class="ti-close"></i></a>
+							<h1 class="display-1">Book a Table</h1>
+							<p class="lead">See how your users experience your website in realtime or view <br/> trends to see any changes in performance over time.</p>
+							<div class="divider-border-left"></div>
+							<div class="space" data-mY="60px"></div>
+							<form method="post" novalidate>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="text" name="name" placeholder="Name" required="">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="text" name="name" placeholder="Phone" required="">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="email" name="email" placeholder="E-mail" required="">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="text" name="subject" placeholder="Persons" required="">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="email" name="email" placeholder="Date" required="">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="text" name="subject" placeholder="Time" required="">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<textarea class="form-control" name="message" placeholder="Special Requests" rows="6" required=""></textarea>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<input class="btn btn-black" type="submit" value="Reserve">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Reserve Popup end-->
+
+		<!-- To top button--><a class="scroll-top" href="#top"><span class="fa fa-angle-up"></span></a>
+
+		<!-- Scripts-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA0rANX07hh6ASNKdBr4mZH0KZSqbHYc3Q"></script>
+		<script src="{% static 'assets/js/plugins.min.js"></script>
+		<script src="{% static 'assets/js/custom.min.js"></script>
+	</body>
 </html>
